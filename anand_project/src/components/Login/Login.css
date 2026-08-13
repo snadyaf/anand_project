@@ -26,13 +26,15 @@
 .loginForm{
     background-color: rgb(250, 248, 248);
     color: gray;
-    width: 300px;
-    height: 300px;
+    width: 450px;
+    height: 370px;
     padding: 20px;
-    margin: 50px auto;
-    margin-top: 150px;
+    margin: 150px auto 0;
     border-radius: 5px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .loginForm h2{
@@ -53,10 +55,9 @@
     height: 30px;
     padding: 10px;
     margin-top: 15px;
-    margin-left: 7%;
     margin-bottom: 10px;
     border-radius: 20px;
-    border: 1px solid rgb(92, 132, 206);
+    border: 1px solid rgb(235, 235, 235);
 }
 
 .loginForm input:focus{
@@ -65,22 +66,42 @@
     box-shadow: 0 3px 10px rgba(116, 139, 202, 0.349);
 }
 
-.loginForm button{
+.senha{
+    background-color: rgb(250, 248, 248);
+    color: #a9c3e4;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+.senha:hover{
+    color: rgba(116, 139, 202, 0.349);
+}
+
+.entrar{
     background-color: #d8e6f8;
     color: gray;
     border: none;
     border-radius: 30px;
     padding: 10px 20px;
     border-radius: 5px;
-    margin-top: 10px;
-    margin-left: 35%;
+    margin-top: 15px;
     margin-bottom: 15px;
     cursor: pointer;
     box-shadow: 0 3px 10px rgba(116, 139, 202, 0.349);
 }
 
-.loginForm button:hover{
+.entrar:hover{
     background-color: rgb(136, 161, 212);
     box-shadow: 0 3px 10px rgba(106, 133, 207, 0.349);
     color: white;
+}
+
+.googleLogin{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
 }
