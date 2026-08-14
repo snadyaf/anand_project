@@ -2,6 +2,7 @@ import './Login.css'
 import { GoogleLogin } from "@react-oauth/google"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
+import logo from '../../assets/logoanand.png';
 
 export default function Login() {
 
@@ -11,8 +12,9 @@ export default function Login() {
     }];
     const [usuario, setUsuario] = useState("");
     const [senha, setSenha] = useState("");
-    const navigate = useNavigate();
     const [usuarioInvalido, setUsuarioInvalido] = useState(false);
+    const navigate = useNavigate();
+    const navigateGoogle = useNavigate();
 
     function fazerLogin(){
         const usuarioValido = usuarios.find((item) => 
@@ -24,6 +26,7 @@ export default function Login() {
         } else{
             setUsuarioInvalido(true)
         }
+        
     }
 
     return (
@@ -31,11 +34,7 @@ export default function Login() {
             <div className="loginContainer">
 
                 <div className="loginAnand">
-
-                    <h1>AND</h1>
-                    <h3>Anand. Sua Central de Atendimento e Suporte.</h3>
-
-
+                    <img src={logo} alt="logoanand" />
                 </div>
 
                 <div className="loginForm">
