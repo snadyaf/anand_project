@@ -2,7 +2,7 @@ import './Login.css'
 import { GoogleLogin } from "@react-oauth/google"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
-import logo from '../../assets/logoanand.png';
+import logo from '../../assets/logoanand.png'
 
 export default function Login() {
 
@@ -57,6 +57,7 @@ export default function Login() {
                             onSuccess={(credentialResponse) => {
                                 console.log("Login realizado!");
                                 console.log(credentialResponse);
+                                navigateGoogle("/home");
                             }}
                             onError={() => {
                                 console.log("Erro ao fazer login");
