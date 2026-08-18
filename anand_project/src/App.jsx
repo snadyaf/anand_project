@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Routes, Route } from "react-router-dom"
 import HomePage from "./pages/HomePage"
 import LoginPage from "./pages/LoginPage"
-import Dashboard from "./pages/Dashboard"
-import Relatorios from "./pages/Relatorios"
+import DashboardPage from "./pages/DashboardPage"
+import RelatoriosPage from "./pages/RelatoriosPage"
 import './App.css'
 
 export default function App() {
@@ -11,8 +11,8 @@ export default function App() {
     <Routes>
       <Route path="/" element={<LoginPage />} />
       <Route path="/home" element={<HomePage />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/relatorios" element={<Relatorios />} />
+      <Route path="/dashboard" element={<DashboardPage />} />
+      <Route path="/relatorios" element={<RelatoriosPage />} />
     </Routes>
   );
 }

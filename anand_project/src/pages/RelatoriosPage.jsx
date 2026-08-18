@@ -1,4 +1,4 @@
-export default function Relatorios () {
+export default function RelatoriosPage () {
 
     return (
 
