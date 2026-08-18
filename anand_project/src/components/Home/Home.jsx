@@ -7,6 +7,18 @@ export default function Home() {
 
     const [menuAberto, setMenuAberto] = useState(false)
     const [darkTema, setDarkTema] = useState(false)
+    const [novoChamado, setNovoChamado] = useState(false)
+    const [numeroChamado, setNumeroChamado] = useState('')
+
+    function Chamado() {
+        const hoje = new Date()
+        const ano = hoje.getFullYear()
+        const mes = String(hoje.getMonth() + 1).padStart(2, '0')
+        const dia = String(hoje.getDate()).padStart(2, '0')
+        const data = `${ano}${mes}${dia}`
+        const numeroSequencial = 1
+        setNumeroChamado(`${data}${numeroSequencial}`)
+    }
 
     return (
         <div className={`home ${darkTema ? 'dark' : 'light'}`}>
@@ -15,7 +27,7 @@ export default function Home() {
 
                 <div className="logoIcon">
                     <NavLink to="/home">
-                        <img src={logoIcon} alt="Logo Anand" className="anandIcon"/>
+                        <img src={logoIcon} alt="Logo Anand" className="anandIcon" />
                     </NavLink>
                 </div>
 
@@ -35,7 +47,7 @@ export default function Home() {
 
                 </nav>
 
-            </aside> 
+            </aside>
 
             <header className={`headerHome ${menuAberto ? 'menuAberto' : ''}`}>
 
@@ -58,8 +70,13 @@ export default function Home() {
                         </svg>
                     </button>
 
-                    <button className="criaChamadoHeader">
-
+                    <button
+                        className="criaChamadoHeader"
+                        onClick={() => {
+                            Chamado()
+                            setNovoChamado(true)
+                        }}
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="18"
@@ -77,6 +94,29 @@ export default function Home() {
                         <span></span>
 
                     </button>
+
+                    <aside className={`modalNovoChamado ${novoChamado ? 'aberto' : ''}`}>
+
+                        <div className="popupNovo">
+                            <div className="fechapopup">
+                                <button className="fecharPopup" onClick={() => setNovoChamado(!novoChamado)}>
+                                    <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p>Chamado N°: {numeroChamado}</p>
+                            Cliente: <select type="text" />
+                            Assunto: <input type="text" />
+                            Detalhe o cenário: <input type="text" className="detalheChamado" />
+
+                            <div className="criarChamado">
+                                <button>Criar Chamado</button>
+                            </div>
+                        </div>
+
+                    </aside>
 
                 </div>
 
@@ -96,7 +136,7 @@ export default function Home() {
                         <line x1="16.5" y1="16.5" x2="21" y2="21" />
                     </svg>
 
-                    <input type="text" placeholder="Buscar..."/>
+                    <input type="text" placeholder="Buscar..." />
 
                 </div>
 
