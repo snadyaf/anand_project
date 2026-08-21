@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage"
 import DashboardPage from "./pages/DashboardPage"
 import RelatoriosPage from "./pages/RelatoriosPage"
 import './App.css'
+import Home from './components/Home/Home'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/relatorios" element={<RelatoriosPage />} />
     </Routes>
+    
   );
 }
 
